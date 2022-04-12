@@ -1,9 +1,9 @@
 <script setup>
-import Simpsons from './components/Simpsons.vue';
+import List from './components/List.vue';
 </script>
 
 <template>
-  <Simpsons />
+  <List />
 </template>
 
 <style>

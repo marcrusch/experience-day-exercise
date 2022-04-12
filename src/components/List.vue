@@ -1,11 +1,12 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
   <h1 class="text-xl mb-8">Simpson Quotes</h1>
-
+  <!-- <SortButton direction="up" text="Sort ascending" />
+  <SortButton direction="down" text="Sort descending" /> -->
   <div
     v-for="quote in simpsons"
     :key="quote"
-    class="bg-gradient-to-br from-cyan-300 rounded-lg shadow w-64"
+    class="bg-gradient-to-br from-cyan-100 rounded-lg shadow w-64"
   >
     <div class="flex-1 flex flex-col p-8">
       <img
@@ -13,7 +14,7 @@
         :src="quote.image"
         alt="image of quote.character"
       />
-      <h3 class="mt-6 text-gray-900 text-sm font-medium">
+      <h3 class="mt-6 text-gray-900 text-xs">
         {{ quote.quote }}
       </h3>
     </div>
@@ -22,7 +23,7 @@
 
 <script>
 import { MailIcon, PhoneIcon } from '@heroicons/vue/solid';
-
+import SortButton from './SortButton.vue';
 // fetch from https://thesimpsonsquoteapi.glitch.me/quotes
 const simpsons = [
   {
@@ -37,7 +38,7 @@ const simpsons = [
 
 export default {
   name: 'Simpsons',
-  components: {},
+  components: { SortButton },
   setup() {
     return {
       simpsons,
