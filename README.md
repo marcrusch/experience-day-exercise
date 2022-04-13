@@ -1,5 +1,7 @@
 # Experience day exercise
 
+⚠️ Blitzstack works best in Chrome (images are broken in Firefox (CSP header))
+
 ## Setup
 
 To start and work on the case please do the following:
