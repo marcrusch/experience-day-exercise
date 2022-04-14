@@ -78,18 +78,20 @@ export default {
       this.simpsons = await getSimpsons(amount);
     },
     sort(direction) {
-      this.sortDirection = direction;
-      this.simpsons.sort((a, b) => {
-        if (a.character < b.character) {
-          return -1;
+      if (direction !== this.sortDirection) {
+        this.simpsons.sort((a, b) => {
+          if (a.character < b.character) {
+            return -1;
+          }
+          if (a.character > b.character) {
+            return 1;
+          }
+          return 0;
+        });
+        if (direction === "down") {
+          this.simpsons.reverse();
         }
-        if (a.character > b.character) {
-          return 1;
-        }
-        return 0;
-      });
-      if (direction === "down") {
-        this.simpsons.reverse();
+        this.sortDirection = direction;
       }
     },
   },
